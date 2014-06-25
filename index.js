@@ -12,7 +12,10 @@ var footerPlugin = function(footerText, data) {
   return es.map(function(file, cb){
     file.contents = Buffer.concat([
       file.contents,
-      new Buffer(gutil.template(footerText, extend({file : file}, data)))
+      new Buffer( typeof footerText === 'function' ?
+        footerText( file ) :
+        gutil.template(footerText, extend({file : file}, data))
+      )
     ]);
     cb(null, file);
   });

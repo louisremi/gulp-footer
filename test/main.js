@@ -5,6 +5,7 @@
 var footer = require('../');
 var should = require('should');
 var gutil = require('gulp-util');
+var path = require('path');
 require('mocha');
 
 describe('gulp-footer', function() {
@@ -61,6 +62,29 @@ describe('gulp-footer', function() {
       stream.end();
     });
 
+    it('should generate a footer from a function and append it', function(done) {
+      var stream = footer(function() { return ' : before I said'; });
+      stream.on('data', function (newFile) {
+        should.exist(newFile.contents);
+        newFile.contents.toString().should.equal('Hello world : before I said');
+      });
+      stream.once('end', done);
+
+      stream.write(fakeFile);
+      stream.end();
+    });
+
+    it('should pass the file to the footer function', function(done) {
+      var stream = footer(function(file) { return ' : before ' + path.basename( file.path, '.js' ) + ' said'; });
+      stream.on('data', function (newFile) {
+        should.exist(newFile.contents);
+        newFile.contents.toString().should.equal('Hello world : before file said');
+      });
+      stream.once('end', done);
+
+      stream.write(fakeFile);
+      stream.end();
+    });
 
     it('should format the footer', function(done) {
       var stream = footer(' : and then <%= foo %> said', { foo : 'you' } );

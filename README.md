@@ -25,6 +25,15 @@ Default: `{}`
 
 The data object used to populate the text.
 
+### footer(footerCb)
+
+#### footerCb
+
+Type: `Function`  
+Default: `undefined`  
+
+The function that will return the footer text. It receives one argument: the file object.
+
 
 ## Usage
 
@@ -41,6 +50,12 @@ gulp.src('./foo/*.js')
 
 gulp.src('./foo/*.js')
   .pipe(footer('Hello ${name}\n', { name : 'World'} ))
+  .pipe(gulp.dest('./dist/')
+
+gulp.src('./foo/*.js')
+  .pipe(footer(function(file) {
+    return 'Hello ' + file.path;
+  })
   .pipe(gulp.dest('./dist/')
 
 

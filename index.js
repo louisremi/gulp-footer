@@ -2,7 +2,6 @@
 'use strict';
 
 var es = require('event-stream');
-var extend = require('lodash.assign');
 var template = require('./template');
 
 var footerPlugin = function(footerText, data) {
@@ -10,7 +9,7 @@ var footerPlugin = function(footerText, data) {
   return es.map(function(file, cb){
     file.contents = Buffer.concat([
       file.contents,
-      new Buffer(template(footerText, extend({file : file}, data)))
+      new Buffer(template(footerText, Object.assign({file : file}, data)))
     ]);
     cb(null, file);
   });

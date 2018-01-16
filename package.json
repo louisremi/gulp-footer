@@ -22,10 +22,20 @@
   ],
   "author": {
     "name": "Michael J. Ryan",
-    "email": "mxryan@godaddy.com",
+    "email": "tracker1@gmail.com",
     "url": "http://github.com/tracker1"
   },
   "contributors": [
+    {
+      "name": "Michael J. Ryan",
+      "email": "tracker1@gmail.com",
+      "url": "http://github.com/tracker1"
+    },
+    {
+      "name": "Simon Kurtz",
+      "email": "simonkurtz@gmail.com",
+      "url": "https://github.com/simonua"
+    },
     {
       "name": "GoDaddy.com",
       "url": "http://github.com/godaddy"

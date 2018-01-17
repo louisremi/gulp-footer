@@ -54,6 +54,7 @@
     "event-stream": "*",
     "lodash._reescape": "^3.0.0",
     "lodash._reevaluate": "^3.0.0",
+    "lodash._reinterpolate": "^3.0.0",
     "lodash.template": "^3.6.2"
   },
   "devDependencies": {

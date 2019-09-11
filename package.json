@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/tracker1/gulp-footer.git"
+    "url": "git://github.com/gulp-community/gulp-footer.git"
   },
   "keywords": [
     "footer",
@@ -48,7 +48,7 @@
   ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/tracker1/gulp-footer/issues"
+    "url": "https://github.com/gulp-community/gulp-footer/issues"
   },
   "dependencies": {
     "lodash._reescape": "^3.0.0",
